@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+            block-size: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            /* font-size: 20px;
+            position: relative;
+            -webkit-background-clip: text;
+            background: linear-gradient(to right, purple, blue, red 25%, purple, rgb(20, 204, 188));
+            color: transparent;
+            background-size: 200%;
+            text-align: center;
+            padding: 1em;
+            cursor: pointer;
+            border-color: #106666;
+            animation: gradient 2s linear infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 75%;
+            }
+
+            50% {
+                background-position: 100% 30%;
+            }
+
+            100% {
+                background-position: 0% 7%;
+            } */
+
+            background-color: rgb(182, 94, 150);
+        }
+
+        #header {
+            width: 100%;
+            height: 100vh;
+            background-image: url("C:/Users/Kamakshee/Documents/myimg.jpg");
+            background-size: cover;
+            background-position: center;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 10px 10%;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            width: 200px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: rgb(1, 72, 35);
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .header-text {
+            color: white;
+            margin-top: 20%;
+            font-size: 30px;
+        }
+
+        .header-text h1 {
+            font-size: 80px;
+            margin-top: 20px;
+        }
+
+        .header-text h1 span {
+            color: rgb(253, 254, 253);
+        }
+
+        .underline {
+            color: rgb(34, 245, 6);
+        }
+
+        /* About */
+        #About {
+            padding: 100px 0;
+            color: #f8f8f8;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .About-col-1 {
+            flex-basis: 30%;
+        }
+
+        .About-col-1 img {
+            width: 100%;
+            margin-left: 32%;
+            border-radius: 25px;
+        }
+
+        .About-col-2 {
+            flex-basis: 50%;
+            text-align: justify;
+        }
+
+        .para {
+            width: 82%;
+            height: 100px;
+        }
+
+        .sub-title {
+            font-size: 70px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .tab-titles {
+            display: flex;
+            margin: 60px 0 40px;
+        }
+
+        .tab-links {
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 5px;
+            background: rgb(15, 62, 8);
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .tab-links.active-link::after {
+            width: 100%;
+        }
+
+        .tab-contents ul li {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .tab-contents ul li span {
+            color: rgb(11, 48, 5);
+            font-size: 30px;
+        }
+
+        .tab-contents {
+            display: none;
+        }
+
+        .tab-contents.active-tab {
+            display: block;
+        }
+
+
+        /* services */
+        #services {
+            padding: 30px 0;
+
+        }
+
+        .services-list {
+            display: grid;
+            color: white;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+
+        .services-list div {
+            background-color: cadetblue;
+
+            padding: 40px;
+            font-size: 13px;
+            font-weight: 300;
+            border-radius: 10px;
+            transition: background 0.5s, transform 0.5s;
+        }
+
+        .services-list div i {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+
+        .services-list div h2 {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .services-list div a {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .services-list div:hover {
+            background: #003f72;
+            transform: translateY(-10px);
+        }
+
+        /* portfolio */
+        #portfolio {
+            padding: 50px 0;
+        }
+
+        .work-list {
+            display: grid;
+            color: white;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+
+        .work {
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .layer {
+            width: 100%;
+            height: 0;
+            background: linear-gradient(rgba(10, 10, 10, 0.3), #161716);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* padding: 0 40px; */
+            text-align: center;
+            font-size: 14px;
+            transition: height 0.5s;
+        }
+
+        .layer h3 {
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .layer a {
+            margin-top: 20px;
+            color: rgb(0, 255, 51);
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 60px;
+            background: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .work:hover img {
+            transform: scale(1.1);
+        }
+
+        .work:hover .layer {
+            height: 100%;
+        }
+
+        .btn {
+            display: block;
+            margin: 50px auto;
+            width: fit-content;
+            border: 1px solid #051607;
+            padding: 14px 50px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: white;
+            transition: background 0.5s;
+        }
+
+        .btn {
+            display: inline-block;
+             font-size: 20px;
+           
+            -webkit-background-clip: text;
+            background: linear-gradient(to right,rgb(125, 7, 26), red 25%, rgb(57, 136, 239));
+            color:wheat;
+            background-size: 200%;
+            text-align: center;
+            padding: 1em;
+            cursor: pointer;
+            border-color: #106666;
+            animation: gradient 3s linear infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 75%;
+            }
+
+            50% {
+                background-position: 100% 30%;
+            }
+
+            100% {
+                background-position: 0% 7%;
+            }
+        }
+
+        /* Contact */
+
+        .contact-left {
+            flex-basis: 35%;
+        }
+
+        p {
+            color: white;
+        }
+
+        .contact-right {
+            flex-basis: 60%;
+        }
+
+        .contact-left p {
+            margin-top: 30px;
+        }
+
+        .contact-left p i {
+            color: rgb(11, 12, 11);
+            margin-right: 5px;
+            font-size: 25px;
+        }
+
+        .social-icons {
+            margin-top: 50px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 30px;
+            margin-right: 15px;
+            color: #0b0b0b;
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+
+        .social-icons a:hover {
+            color: #06fa12;
+            transform: translateY(-5px);
+        }
+
+        .btn.btn2 {
+            display: inline-block;
+             font-size: 20px;
+            position: relative;
+            -webkit-background-clip: text;
+            background: linear-gradient(to right,rgb(125, 7, 26), red 25%, rgb(57, 136, 239));
+            color:wheat;
+            background-size: 200%;
+            text-align: center;
+            padding: 1em;
+            cursor: pointer;
+            border-color: #106666;
+            animation: gradient 3s linear infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 75%;
+            }
+
+            50% {
+                background-position: 100% 30%;
+            }
+
+            100% {
+                background-position: 0% 7%;
+            }
+        }
+
+        .contact-right form {
+            width: 100%;
+            
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            border: 0;
+            outline: none;
+           background: white;
+           height: 60px;
+            margin: 15px 0;
+            color: #000000;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+
+        form .btn2 {
+            padding: 14px 60px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .copyright {
+            overflow: hidden;
+            text-align: center;
+            padding: 30px;
+            background: #262626;
+            margin-top: 10px;
+        }
+
+        .copyright i {
+            color: #028d2c;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/f1fc655071.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#header"> Home </a></li>
+                    <li><a href="#About"> About</a></li>
+                    <li><a href="#services">Service</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>MY PORTFOLIO-</p>
+                <h1>Hello,I'm <span> Naveen soni</span> <br> from India.</h1>
+            </div>
+        </div>
+    </div>
+    <!-- About -->
+    <div id="About">
+        <div class="containe">
+            <div class="row">
+                <div class="About-col-1">
+                    <img src="2kunal.jpg">
+                </div>
+                <div class="About-col-2">
+                    <h1 class="sub-title">About me-</h1>
+                    <p class="para"><br>I'm a passionate student with a keen interest in the world of cybersecurity.
+                        While I'm currently honing my skills in web development, C, and C++, I am determined to pivot
+                        towards a career in cybersecurity.
+
+                        My journey began with a strong foundation in web development, where I've developed the ability
+                        to create web applications and websites. Additionally, my knowledge of C and C++ has equipped me
+                        with a solid programming background.
+
+                        My goal is to combine these skills with a deep understanding of cybersecurity to contribute to
+                        making the digital world more secure. I am committed to continuous learning and excited about
+                        the challenges and opportunities that lie ahead in this dynamic field.
+
+                        Let's connect and explore how we can collaborate and learn from each other on this exciting path
+                        to cybersecurity excellence.</p> <br> <br>
+                    <div class="tab-titles">
+
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span><br>Programming languages -</span><br>SQL , DBMS , C ,    C++ etc. <br></li>
+                            <li><span>Skills -</span><br>Problem-solving and critical thinking,etc.<br>Web development
+                                technologies including HTML, CSS, and JavaScript. <br></li>
+                            <li><span>Education -</span><br>Bachelor's in Computer applications.</li>
+
+                        </ul>
+
+                        <div class="tab-contents active-tab" id="education">
+                            <ul>
+                                <li><span>(2023-24)</span><br>Bachelor of Computer Application Part-2 <br>(Maharishi
+                                    Arvind Institute of science and Management)</li>
+                                <li><span>(2022-23)</span><br>Bachelor of Computer Application Part-1 <br>(Maharishi
+                                    Arvind Institute of science and Management)</li> <br>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- services -->
+                <div class="services">
+                    <div class="container">
+                        <h1 class="sub-title">My Services</h1>
+                        <div class="services-list">
+                            <div>
+                                <h2>Web Designing</h2>
+                                <p>In the dynamic realm of web design, I craft immersive digital experiences that
+                                    seamlessly blend aesthetics and functionality.
+                                    With a keen eye for detail and a passion for user-centric design, I bring concepts
+                                    to life, ensuring websites not only look visually compelling but also deliver an
+                                    intuitive and engaging user journey.</p>
+                                <a href="Learn more">Learn more</a>
+                            </div>
+                            <div>
+                                <h2>Graphic Designing</h2>
+                                <p>In the realm of graphic design, I bring creativity and precision to every project.
+                                    I've ventured into web design, contributing to visually appealing and user-friendly
+                                    interfaces. Throughout my work,
+                                    I prioritize effective communication and collaboration, tailoring each design to
+                                    meet the unique needs and goals of the client.</p>
+                                <a href="Learn more">Learn more</a>
+                            </div>
+                            <div>
+                                <h2>Content Writing</h2>
+                                <p>welcome to my content writing portfolio, where words come to life and ideas find
+                                    expression. Through a combination of creativity and strategic communication,
+                                    I pride myself on delivering content that not only informs and entertains but also
+                                    drives engagement and fosters a connection between the message and the reader.</p>
+                                <a href="Learn more">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- portfolio -->
+                    <div id="portfolio">
+                        <div class="container">
+                            <h1 class="sub-title">My work</h1>
+                            <div class="work-list">
+                                <div class="work">
+                                 
+                                    <div class="layer">
+                                        <h3>Designing</h3>
+                                        <p>"As a graphic designer i held a keen intrest over designs like ui/ux and more
+                                            like logos,
+                                            templates,animations etc...</p>
+                                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                                    </div>
+                                </div>
+                                <div class="work">
+                                   
+                                    <div class="layer">
+                                        <h3>creativity</h3>
+                                        <p>Being a designer i do have creative skills.</p>
+                                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                                    </div>
+                                </div>
+                                <div class="work">
+                                    
+                                    <div class="layer">
+                                        <h3>Content Writing</h3>
+                                        <p>Apart from all through a combination of creativity and strategic
+                                            communication,
+                                            I can craft compelling content across various genres. </p>
+                                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn">See more</a>
+                        </div>
+
+                        <!-- Contact -->
+                        <div id="contact">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="contact-left">
+                                        <h1 class="sub-title">Contact Me</h1>
+                                        <p> <i class="fa-sharp fa-solid fa-paper-plane"></i>soninaveen9756@gmail.com
+                                        </p>
+                                        <p> <i class="fa-solid fa-square-phone"></i>9756****1567</p>
+                                        <div class="social-icons">
+                                         
+                                        </div>
+                                        <a href="" download
+                                            class="btn btn2">Download CV</a>
+                                    </div>
+                                    <div class="contact-right">
+                                        <form action="">
+                                            <input type="text" name="Name" id="" placeholder="Your name " required>
+                                            <input type="email" name="email" placeholder="email" required>
+                                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                                            <button type="submit" class="btn btn2">submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="copyright">
+                                <p>Copyright © Naveen. Made with <i class="fa-solid fa-heart"></i> by Naveen
+                                    Soni</p>
+                            </div>
+                        </div>
+                        <script>
+
+                            var tablinks = document.getElementsByClassName("tab-links");
+                            var tabcontents = document.getElementsByClassName("tab-contents");
+
+                            function opentab(tabname) {
+                                for (tablink of tablinks) {
+                                    tablink.classList.remove("active-link");
+                                }
+                                for (tabcontent of tabcontents) {
+                                    tabcontent.classList.remove("active-tab");
+                                }
+                                event.currentTarget.classList.add("active-link");
+                                document.getElementById(tabname).classList.add("active-tab");
+                            }
+                        </script>
+</body>
+
+</html>
